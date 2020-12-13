@@ -1,2 +1,1 @@
-# DOM
-cheatsheet
+document.write( i + "<br />");
