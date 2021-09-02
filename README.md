@@ -1,5 +1,7 @@
 HTML
 
+
+
 ### <script></script>
 
 * defer 
@@ -53,3 +55,6 @@ async attribute loads and executes the script asynchronously with the rest of th
 ### document
 document.write( i + "<br />");
 
+### Javascript and the DOM
+
+![](/img/dom_1.png)
