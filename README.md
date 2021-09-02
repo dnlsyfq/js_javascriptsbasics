@@ -57,4 +57,8 @@ document.write( i + "<br />");
 
 ### Javascript and the DOM
 
-![](/img/dom_1.png)
+
+<img src="images/dom_1.png?raw=true">
+
+
+
