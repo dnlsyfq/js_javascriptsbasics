@@ -61,4 +61,39 @@ document.write( i + "<br />");
 <img src="images/dom_1.png?raw=true">
 
 
+* document.getElementById("")
+```
+document.getElementById("").style.color = '';
 
+```
+
+```
+    <p id="one">Here is some text</p>
+    <script>
+        document.getElementById("one").style.color = 'red';
+    </script>
+```
+
+* document.getElementsByTagName()
+```
+<p>Here is paragraph</p>
+<p>Here is another paragraph</p>
+<p>Here is one more paragraph</p>
+
+<script>
+    let myParagraph = document.getElementsByTagName('p');
+    console.log(myParagraph);
+</script>
+```
+```
+<script>
+    // let myParagraph = document.getElementsByTagName('p');
+    // console.log(myParagraph);
+    let myText = document.getElementsByTagName('p');
+    for(let i = 0; i < myText.length; i++){
+        myText[i].style.color = 'red';
+    }
+
+</script>
+
+```
