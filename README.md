@@ -97,3 +97,95 @@ document.getElementById("").style.color = '';
 </script>
 
 ```
+
+* document.getElementsByClassName()
+```
+<p class="blue">Here is some text</p>
+<p>Here is some more text</p>
+<p class="blue">Here is even more text</p>
+
+<script>
+    var myText = document.getElementsByClassName('blue');
+    for(var i = 0; i < myText.length; i++){
+        myText[i].style.color='blue';
+    }
+</script>
+```
+
+* document.querySelector();
+return first match
+```
+<div id="special">
+    <p class="someclass">Here is some text</p>
+    <p>Here is some more text</p>
+    <p>Here is one more paragraph</p>
+</div>
+
+    <script>
+        var myText = document.querySelector('#special .someclass');
+        myText.style.color = 'red';
+    </script>
+
+```
+
+* document.querySelectorAll();
+get all elements matched , return a nodelist of elements 
+```
+<div id="special">
+    <p>Here is some text</p>
+    <p>Here is some more text</p>
+</div>
+<p>Not this paragraph!</p>
+
+<script>
+    var myText = document.querySelectorAll("#special p");
+    for(var i=0; i < myText.length; i++){
+        myText[i].style.fontWeight = "bold";
+    }
+</script>
+```
+
+### DOM properties
+
+* element.style.color = ""
+* element.style.property = ""
+* element.innerHTML = ""
+use this property to change the html inside any element on web page
+```
+<div id="special">
+    <p>Here is some text</p>
+    <p>Here is some more text</p>
+</div>
+
+<script>
+    var myDiv = document.getElementById('special');
+    myDiv.innerHTML = "<p>I love cheese</p>";
+</script>
+```
+
+* element.className = ""
+setting className properly allows you to set the class
+or classes for an element
+
+```
+    <style>
+        .blue {color:blue;}
+    </style>
+    
+    <div id="special">
+        <p>Here is some text</p>
+        <p>Here is some more text</p>
+    </div>
+    
+    <script>
+        var firstPara = document.querySelector('p');
+        firstPara.className = 'blue';
+    </script>
+```
+
+
+### DOM methods 
+
+* .setAttribute("attributeName",value);
+* .removeAttribute("attributeName");
+* .getAttribute("attributeName");
