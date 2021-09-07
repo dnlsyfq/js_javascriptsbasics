@@ -1,5 +1,6 @@
 const btnUpdate = document.getElementById('btn-main');
 const btnToggle = document.querySelector('.btn-toggle');
+const btnRemove = document.querySelector('.btn-remove');
 
 btnUpdate.addEventListener('click',() =>{
 
@@ -12,12 +13,21 @@ btnUpdate.addEventListener('click',() =>{
     // input.value = '';
 
     // exercise 2
+    // const input = document.querySelector('.input-main');
+    // const item = document.createElement('li');
+    // item.textContent = input.value;
+    // document.querySelector('ul').appendChild(item);
+
+    // exercise 3
     const input = document.querySelector('.input-main');
-    const item = document.createElement('li');
-    item.textContent = input.value;
-    document.querySelector('ul').appendChild(item);
+    const list = document.querySelector('ul');
 
+    list.insertAdjacentHTML(
+      'afterbegin',
+      `<li>${input.value}</li>`
+    );
 
+    input.value = '';
 
 });
 
@@ -34,5 +44,9 @@ btnToggle.addEventListener('click',() => {
 
 });
 
+btnRemove.addEventListener('click',() => {
+    const ul = document.querySelector('ul');
+    ul.removeChild(ul.lastElementChild);
 
+})
 

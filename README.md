@@ -304,6 +304,37 @@ or classes for an element
 
 ```
 
+### append nodes
+
+* ParentNode.append()
+* ParentNode.prepend(child)
+* ParentNode.append(child)
+
+### insert html at specified positions
+
+* element.insertAdjacentHTML(position,html);
+  Use the InsertAdjacentHTML method to insert elements into the DOM. This method provides more control over inserting HTML inside a parent
+
+```
+     <input type="text" id="main" class="input-main">
+     <button id="btn-main">Update Heading</button>
+                
+     const btnUpdate = document.getElementById('btn-main');
+     btnUpdate.addEventListener('click',() =>{
+        const input = document.querySelector('.input-main');
+        const list = document.querySelector('ul');
+    
+        list.insertAdjacentHTML(
+          'afterbegin',
+          `<li>${input.value}</li>`
+        );
+
+        input.value = '';
+
+    });
+
+```
+
 ### Remove Elements
 
 ```
@@ -316,6 +347,21 @@ or classes for an element
     var myDiv = document.querySelector('div');
     myDiv.removeChild(myDiv.children[1]);
 </script>
+```
+
+```
+btnRemove.addEventListener('click',() => {
+    const lastItem = document.querySelector('li:last-child');
+    lastItem.remove();
+})
+```
+
+```
+btnRemove.addEventListener('click',() => {
+    const ul = document.querySelector('ul');
+    ul.removeChild(ul.lastElementChild);
+
+})
 ```
 
 ### DOM
