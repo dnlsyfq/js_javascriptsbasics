@@ -1,87 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>DOM Examples</title>
-    <style>
-        .blue {color:blue;}
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript and the DOM</title>
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
+    <div class="wrapper">
+        <header>
+            <h1 id="headline">My Day</h1>
+            <div class="group">
+                <label for="main">What's your task?</label>
+                <input type="text" id="main" class="input-main">
+                <button id="btn-main">Update Heading</button>
+            </div>
+        </header>
 
-<!--    <p id="one">Here is some text</p>-->
-<!--    <script>-->
-<!--        document.getElementById("one").style.color = 'red';-->
-<!--    </script>-->
+        <button class="btn-toggle">Hide List</button>
 
-<!--<p>Here is paragraph</p>-->
-<!--<p>Here is another paragraph</p>-->
-<!--<p>Here is one more paragraph</p>-->
-
-<!--<script>-->
-<!--    // let myParagraph = document.getElementsByTagName('p');-->
-<!--    // console.log(myParagraph);-->
-<!--    let myText = document.getElementsByTagName('p');-->
-<!--    for(let i = 0; i < myText.length; i++){-->
-<!--        myText[i].style.color = 'red';-->
-<!--    }-->
-
-<!--</script>-->
-
-<!--<p class="blue">Here is some text</p>-->
-<!--<p>Here is some more text</p>-->
-<!--<p class="blue">Here is even more text</p>-->
-
-<!--<script>-->
-<!--    var myText = document.getElementsByClassName('blue');-->
-<!--    for(var i = 0; i < myText.length; i++){-->
-<!--        myText[i].style.color='blue';-->
-<!--    }-->
-<!--</script>-->
-
-<!--<div id="special">-->
-<!--    <p class="someclass">Here is some text</p>-->
-<!--    <p>Here is some more text</p>-->
-<!--    <p>Here is one more paragraph</p>-->
-<!--</div>-->
-
-<!--    <script>-->
-<!--        var myText = document.querySelector('#special .someclass');-->
-<!--        myText.style.color = 'red';-->
-<!--    </script>-->
-
-<!--<div id="special">-->
-<!--    <p>Here is some text</p>-->
-<!--    <p>Here is some more text</p>-->
-<!--</div>-->
-<!--<p>Not this paragraph!</p>-->
-
-<!--<script>-->
-<!--    var myText = document.querySelectorAll("#special p");-->
-<!--    for(var i=0; i < myText.length; i++){-->
-<!--        myText[i].style.fontWeight = "bold";-->
-<!--    }-->
-<!--</script>-->
-
-<!--<div id="special">-->
-<!--    <p>Here is some text</p>-->
-<!--    <p>Here is some more text</p>-->
-<!--</div>-->
-
-<!--<script>-->
-<!--    var myDiv = document.getElementById('special');-->
-<!--    myDiv.innerHTML = "<p>I love cheese</p>";-->
-<!--</script>-->
-
-    <div id="special">
-        <p>Here is some text</p>
-        <p>Here is some more text</p>
+        <div class="list-container">
+            <ul aria-live="polite">
+                <li class="highlight">Make coffee</li>
+                <li>Practice JavaScript</li>
+                <li>Walk the cat</li>
+                <li>Watch a Treehouse video</li>
+                <li class="highlight">Go swimming</li>
+                <li class="highlight">Play my guitar</li>
+            </ul>
+            <button class="btn-remove">Remove Last Task</button>
+        </div>
     </div>
 
-    <script>
-        var firstPara = document.querySelector('p');
-        firstPara.className = 'blue';
-    </script>
-
+    <script src="app.js"></script>
+4
 </body>
 </html>
+

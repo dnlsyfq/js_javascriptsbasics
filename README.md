@@ -1,6 +1,7 @@
 HTML
 
-
+Project Example :
+ a
 
 ### <script></script>
 
@@ -74,7 +75,28 @@ document.getElementById("").style.color = '';
     </script>
 ```
 
+```
+const headline = document.getElementById('headline');
+const btnmain = document.getElementById('btn-main');
+
+btnmain.addEventListener('click',() =>{
+    headline.style.border = 'solid 2px red';                     
+});
+
+```
+
+```
+const button = document.getElementById('btn-phrase');
+const input = document.getElementById('input-phrase');
+
+button.addEventListener('click', () => {
+  alert(input.value);
+});
+```
+
+
 * document.getElementsByTagName()
+return htmlcollection
 ```
 <p>Here is paragraph</p>
 <p>Here is another paragraph</p>
@@ -98,7 +120,15 @@ document.getElementById("").style.color = '';
 
 ```
 
+```
+const li = document.getElementsByTagName('li');
+for(let i = 0; i < li.length; i++){
+    li[i].style.backgroundColor = 'yellow';
+}
+```
+
 * document.getElementsByClassName()
+return htmlcollection
 ```
 <p class="blue">Here is some text</p>
 <p>Here is some more text</p>
@@ -112,7 +142,19 @@ document.getElementById("").style.color = '';
 </script>
 ```
 
+```
+const highlights = document.getElementsByClassName('highlight');
+//for(let i = 0; i < highlight.length; i++){
+//    highlight[i].style.backgroundColor = 'cornsilk';
+//}
+
+for(const highlight of highlights){
+    highlight.style.backgroundColor = 'cornsilk';
+}
+```
+
 * document.querySelector();
+Use CSS Queries
 return first match
 ```
 <div id="special">
@@ -127,9 +169,22 @@ return first match
     </script>
 
 ```
+```
+document.querySelector('button');
+document.querySelector('.btn-toggle'); // class
+document.querySelector('#headline'); // id
+document.querySelector('[title="Page Title"]'); // title="Page Title"
+document.querySelectorAll('nav a');
+document.querySelectorAll('#gallery a');
+```
 
 * document.querySelectorAll();
+Use CSS Queries
 get all elements matched , return a nodelist of elements 
+nodelist
+  * contains elements nodes and text nodes
+  * iterate for, for of , map() and forEach()
+  *  static 
 ```
 <div id="special">
     <p>Here is some text</p>
@@ -187,5 +242,135 @@ or classes for an element
 ### DOM methods 
 
 * .setAttribute("attributeName",value);
+```
+<form>
+    <label><input type="checkbox">YES!</label>
+</form>
+
+<script>
+    var myCheckbox = document.querySelector('input');
+    myCheckbox.setAttribute('checked','checked');
+</script>
+
+
+```
+
+
 * .removeAttribute("attributeName");
 * .getAttribute("attributeName");
+
+### Creating Elements and Text Nodes
+
+```
+<div>
+    <p>Here is a paragraph</p>
+</div>
+
+<script>
+    var myTag = document.createElement('p');
+    var mySentence = document.createTextNode('second paragraph');
+    myTag.appendChild(mySentence);
+    document.querySelector('div').appendChild(myTag);
+</script>
+
+```
+
+### Remove Elements
+
+```
+<div>
+    <p>Here is a paragraph</p>
+    <p>Remove this paragraph</p>
+</div>
+
+<script>
+    var myDiv = document.querySelector('div');
+    myDiv.removeChild(myDiv.children[1]);
+</script>
+```
+
+### DOM
+
+window.document 
+document.body.style.backgroundColor = ''
+document.body.innerHTML = ''
+document.body.remove()
+
+
+---
+
+# Treehouse
+
+### Browser Events
+
+document.body.addEventListener(<event>,<function>)
+```
+const body = document.body;
+
+body.addEventListener('click',() => {
+//     console.log('You clicked the body');                          
+     body.innerHTML = '<h1>Hello, World</h1>';
+});
+```
+
+```
+const headline = document.getElementById('headline');
+const btnmain = document.getElementById('btn-main');
+
+document.getElementsByTagName('li').style.backgroundColor = 'skyblue';
+
+btnmain.addEventListener('click',() =>{
+    headline.style.border = 'solid 2px red';    
+    headline.style.fontSize = '60px';
+});
+
+```
+
+### accessing element
+
+* document.body
+* document.head
+
+### get and set content with textContent and innerHTML
+
+* Element.textContent
+* Element.innerHTML
+
+```
+const btnUpdate = document.getElementById('btn-main');
+btnUpdate.addEventListener('click',() =>{
+
+    const headline = document.getElementById('headline');
+    const input = document.querySelector('.input-main');
+
+    headline.textContent = input.value;
+    input.value = '';
+});
+```
+
+### change element attributes
+
+* element.attribute
+  * element.className
+```
+const myInput = document.querySelector('input');
+myInput.type = 'checkbox';
+myInput.title = 'hover words';
+
+```
+
+```
+.grow {
+  font-size: 4.8rem;
+  transition: font-size 0.8s ease-in-out;
+}
+
+element.className = 'grow';
+```
+
+### Set Inline Styles with the style Property
+
+```<div style="background-color:teal;"></div>```
+
+* element.style   // list all
+
