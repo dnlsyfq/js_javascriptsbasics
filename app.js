@@ -2,14 +2,23 @@ const btnUpdate = document.getElementById('btn-main');
 const btnToggle = document.querySelector('.btn-toggle');
 
 btnUpdate.addEventListener('click',() =>{
-//    headline.style.border = 'solid 2px red';
-//    headline.style.fontSize = '60px';
-    const headline = document.getElementById('headline');
+
+
+    // exercise 1
+    // const headline = document.getElementById('headline');
+    // const input = document.querySelector('.input-main');
+    // headline.className = 'grow';
+    // headline.textContent = input.value;
+    // input.value = '';
+
+    // exercise 2
     const input = document.querySelector('.input-main');
-//    console.log(input.value);
-    headline.className = 'grow';
-    headline.textContent = input.value;
-    input.value = '';
+    const item = document.createElement('li');
+    item.textContent = input.value;
+    document.querySelector('ul').appendChild(item);
+
+
+
 });
 
 btnToggle.addEventListener('click',() => {
@@ -24,5 +33,6 @@ btnToggle.addEventListener('click',() => {
     }
 
 });
+
 
 

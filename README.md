@@ -275,6 +275,35 @@ or classes for an element
 
 ```
 
+```
+
+      <input type="text" id="main" class="input-main">
+      <button id="btn-main">Update Heading</button>
+  
+    
+         
+      <ul aria-live="polite">
+                <li class="highlight">Make coffee</li>
+                <li>Practice JavaScript</li>
+                <li>Walk the cat</li>
+                <li>Watch a Treehouse video</li>
+                <li class="highlight">Go swimming</li>
+                <li class="highlight">Play my guitar</li>
+      </ul>
+     
+     
+    const btnUpdate = document.getElementById('btn-main');
+    btnUpdate.addEventListener('click',() =>{
+        const input = document.querySelector('.input-main');
+        const item = document.createElement('li');
+        item.textContent = input.value;
+        document.querySelector('ul').appendChild(item);
+    });
+
+
+
+```
+
 ### Remove Elements
 
 ```
@@ -324,6 +353,35 @@ btnmain.addEventListener('click',() =>{
     headline.style.fontSize = '60px';
 });
 
+```
+
+```
+        <div class="list-container">
+            <ul aria-live="polite">
+                <li class="highlight">Make coffee</li>
+                <li>Practice JavaScript</li>
+                <li>Walk the cat</li>
+                <li>Watch a Treehouse video</li>
+                <li class="highlight">Go swimming</li>
+                <li class="highlight">Play my guitar</li>
+            </ul>
+            <button class="btn-remove">Remove Last Task</button>
+        </div>
+        
+        const btnToggle = document.querySelector('.btn-toggle');
+        
+        btnToggle.addEventListener('click',() => {
+            const listContainer = document.querySelector('.list-container');
+        
+            if(listContainer.style.display === "none"){
+                listContainer.style.display = '';
+                btnToggle.textContent = 'Hide List';
+            } else {
+                listContainer.style.display = 'none';
+                btnToggle.textContent = 'Show List';
+            }
+        
+        });
 ```
 
 ### accessing element
