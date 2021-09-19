@@ -1,6 +1,7 @@
 const btnUpdate = document.getElementById('btn-main');
 const btnToggle = document.querySelector('.btn-toggle');
 const btnRemove = document.querySelector('.btn-remove');
+const liHover = document.querySelectorAll('li');
 
 btnUpdate.addEventListener('click',() =>{
 
@@ -48,5 +49,13 @@ btnRemove.addEventListener('click',() => {
     const ul = document.querySelector('ul');
     ul.removeChild(ul.lastElementChild);
 
+})
+
+
+
+liHover.forEach(li => {
+    li.addEventListener('mouseover',() => {
+        li.textContent = li.textContent.toUpperCase();
+    })
 })
 

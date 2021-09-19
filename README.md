@@ -478,3 +478,38 @@ element.className = 'grow';
 
 * element.style   // list all
 
+---
+
+# Interacting with DOM 
+
+* Callback functions 
+function passed to other functions to be run at a certain time 
+
+```
+function sayHi(){
+    console.log('Hello');
+}
+
+sayHi();
+
+function hiAndBye(func){
+    func()
+    console.log('Bye')
+}
+
+hiAndBye(sayHi);
+```
+
+```
+document.addEventListener('event',(event) => {
+  alert(<text>);
+})
+```
+
+### Event Listener
+
+```
+EventTarget.addEventListener('click',(event) => {
+  
+})
+```
