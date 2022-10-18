@@ -513,3 +513,13 @@ EventTarget.addEventListener('click',(event) => {
   
 })
 ```
+
+### user input
+```
+alert(' ')
+confirm(' ') // return true or false
+prompt(' ')// take input
+
+let username = prompt('Enter name')
+confirm(`${username} correct?`)
+```
