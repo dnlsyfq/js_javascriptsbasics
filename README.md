@@ -522,4 +522,7 @@ prompt(' ')// take input
 
 let username = prompt('Enter name')
 confirm(`${username} correct?`)
+
+if(confirm('')){
+}
 ```
